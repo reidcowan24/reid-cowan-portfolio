@@ -1,30 +1,16 @@
 export default function AngularDivider() {
   return (
-    <div className="w-full overflow-hidden" style={{ height: 32 }}>
-      <svg
-        viewBox="0 0 1440 32"
-        preserveAspectRatio="none"
-        className="w-full h-full"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Stepped notch shape */}
-        <path
-          d="M 0,28 L 120,28 L 160,4 L 680,4 L 720,16 L 760,4 L 1280,4 L 1320,28 L 1440,28 L 1440,32 L 0,32 Z"
-          fill="#14171F"
-        />
-        {/* Mint accent line on top */}
-        <path
-          d="M 0,28 L 120,28 L 160,4 L 680,4 L 720,16 L 760,4 L 1280,4 L 1320,28 L 1440,28"
-          stroke="#00E89A"
-          strokeWidth="1"
-          strokeOpacity="0.4"
-          fill="none"
-        />
-        {/* Mint dots at notch peaks */}
-        <circle cx="160" cy="4" r="2.5" fill="#00E89A" opacity="0.7" />
-        <circle cx="720" cy="16" r="2.5" fill="#00E89A" opacity="0.7" />
-        <circle cx="1280" cy="4" r="2.5" fill="#00E89A" opacity="0.7" />
+    <div className="angle-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path className="div-line-faint" d="M 0 20 L 600 20 L 640 40 L 800 40 L 840 20 L 1440 20" />
+        <path className="div-line" d="M 0 60 L 580 60 L 620 40 L 820 40 L 860 60 L 1440 60" />
+        <circle className="div-dot" cx="600" cy="20" r="2.5" />
+        <circle className="div-dot" cx="840" cy="20" r="2.5" />
+        <circle className="div-dot" cx="580" cy="60" r="2.5" />
+        <circle className="div-dot" cx="860" cy="60" r="2.5" />
+        <circle className="div-dot-pulse" cx="720" cy="40" r="3.5" />
+        <line className="div-line-faint" x1="0" y1="40" x2="40" y2="40" />
+        <line className="div-line-faint" x1="1400" y1="40" x2="1440" y2="40" />
       </svg>
     </div>
   )

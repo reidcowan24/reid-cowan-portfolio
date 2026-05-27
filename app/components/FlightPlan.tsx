@@ -1,147 +1,102 @@
-const phases = [
-  {
-    num: '01',
-    label: 'Boost',
-    days: 'Days 1–14',
-    headline: 'Audit, listen, ship one win.',
-    framing: 'Two weeks of listening, then a credibility deposit before I touch the engine.',
-    deliverables: [
-      'Sit with every brand GM',
-      'Audit every funnel, ad account, CRM',
-      'Pull call transcripts → pain-point map',
-      'Ship one revamped landing page',
-    ],
-    isFinal: false,
-  },
-  {
-    num: '02',
-    label: 'Orbit',
-    days: 'Days 15–45',
-    headline: 'Stand up the engine.',
-    framing: 'Multi-tenant foundation goes live. Systems that compound from day 30 on.',
-    deliverables: [
-      'Unified CRM, brand-routed',
-      'Landing pages live, 4+ brands',
-      'Conquest scraper, 2 markets',
-      'Property Revenue Estimates, brand-aware',
-      'Programmatic SEO templates ready',
-    ],
-    isFinal: false,
-  },
-  {
-    num: '03',
-    label: 'Lunar approach',
-    days: 'Days 46–90',
-    headline: 'Saturate the funnel.',
-    framing: 'All eight brands on the system. Engine at scale, documented for handoff.',
-    deliverables: [
-      'Conquest engine, every market',
-      'Programmatic SEO past 2,000 pages',
-      'AI outbound at scale, brand-routed',
-      'Quarterly market reports shipped',
-      'Documented playbook a hire can run',
-    ],
-    isFinal: true,
-  },
-]
-
 export default function FlightPlan() {
   return (
-    <section
-      id="flight-plan"
-      className="py-28 px-6"
-      style={{ borderTop: '1px solid var(--border)' }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="section-label mb-4 reveal">
-          <span className="text-mint">—</span>
-          05 / Flight plan
+    <section className="s" id="flight">
+      <div className="angle-ornament" style={{ top: 80, right: -60, width: 360, height: 540 }} aria-hidden="true">
+        <svg viewBox="0 0 360 540" preserveAspectRatio="xMidYMid meet">
+          <line className="line" x1="180" y1="20" x2="180" y2="520" />
+          <line className="line-faint" x1="100" y1="80" x2="180" y2="120" />
+          <line className="line-faint" x1="180" y1="120" x2="260" y2="80" />
+          <line className="line-faint" x1="100" y1="280" x2="180" y2="320" />
+          <line className="line-faint" x1="180" y1="320" x2="260" y2="280" />
+          <line className="line-faint" x1="100" y1="460" x2="180" y2="500" />
+          <line className="line-faint" x1="180" y1="500" x2="260" y2="460" />
+          <circle className="dot" cx="180" cy="120" r="3" />
+          <circle className="dot" cx="180" cy="320" r="3" />
+          <circle className="dot pulse" cx="180" cy="500" r="4" />
+          <circle className="dot-faint" cx="100" cy="80" r="2" />
+          <circle className="dot-faint" cx="260" cy="80" r="2" />
+          <circle className="dot-faint" cx="100" cy="280" r="2" />
+          <circle className="dot-faint" cx="260" cy="280" r="2" />
+          <circle className="dot-faint" cx="100" cy="460" r="2" />
+          <circle className="dot-faint" cx="260" cy="460" r="2" />
+        </svg>
+      </div>
+      <div className="shell">
+
+        <div className="reveal">
+          <div className="s-eyebrow"><span className="num">05</span> Flight plan</div>
+          <h2 className="s-head">
+            Not a plan. <span className="mint">A re-deployment.</span>
+          </h2>
+          <p className="s-sub">
+            The same arc I ran at Renjoy, ported to Stayd&apos;s surface area.{' '}
+            <strong>Same operator. Same playbook. 50x bigger.</strong>
+          </p>
         </div>
-        <h2
-          className="text-4xl xl:text-5xl font-display font-bold tracking-tight leading-[1.1] mb-3 reveal"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          Not a plan.{' '}
-          <span className="text-mint">A re-deployment.</span>
-        </h2>
-        <p className="text-text-2 text-lg mb-12 reveal reveal-d1">
-          The same arc I ran at Renjoy, ported to Stayd&apos;s surface area. Same operator. Same playbook. 50× bigger.
-        </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {phases.map((p, i) => (
-            <div
-              key={i}
-              className={`hud-card rounded-lg p-7 flex flex-col reveal reveal-d${i + 1}`}
-              style={{
-                background: p.isFinal ? 'rgba(0,232,154,0.03)' : '#14171F',
-                border: p.isFinal
-                  ? '1px solid rgba(0,232,154,0.2)'
-                  : '1px solid var(--border)',
-              }}
-            >
-              <span className="hud-tl" />
-              <span className="hud-tr" />
-              <span className="hud-bl" />
-              <span className="hud-br-c" />
+        <div className="flight-grid reveal-stagger" style={{ marginTop: 40 }}>
 
-              {/* Stage number + phase label */}
-              <div className="flex items-baseline justify-between mb-2">
-                <span
-                  className="font-display font-bold text-5xl leading-none"
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    color: p.isFinal ? 'rgba(0,232,154,0.25)' : 'rgba(255,255,255,0.08)',
-                  }}
-                >
-                  {p.num}
-                </span>
-                <div className="text-right">
-                  <div
-                    className="font-mono text-[10px] tracking-widest uppercase"
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      color: p.isFinal ? '#00E89A' : '#6F7480',
-                    }}
-                  >
-                    {p.label}
-                  </div>
-                  <div
-                    className="font-mono text-[10px] text-text-4 tracking-widest"
-                    style={{ fontFamily: 'var(--font-mono)' }}
-                  >
-                    {p.days}
-                  </div>
-                </div>
+          <div className="flight-card">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="flight-card-header">
+              <div className="flight-card-num">01</div>
+              <div className="flight-card-meta">
+                <div className="flight-card-label">Boost</div>
+                <div className="flight-card-days">Days 1—14</div>
               </div>
-
-              {/* Dashed divider */}
-              <div
-                className="mb-5"
-                style={{
-                  borderTop: `1px dashed ${p.isFinal ? 'rgba(0,232,154,0.3)' : 'var(--border)'}`,
-                }}
-              />
-
-              <h3
-                className="font-display font-bold text-xl mb-2 leading-tight"
-                style={{ fontFamily: 'var(--font-display)', color: p.isFinal ? '#00E89A' : '#ffffff' }}
-              >
-                {p.headline}
-              </h3>
-              <p className="text-text-3 text-sm leading-relaxed mb-5">{p.framing}</p>
-
-              <ul className="space-y-2 mt-auto">
-                {p.deliverables.map((d, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-text-2">
-                    <span className="text-mint mt-0.5 shrink-0">✓</span>
-                    {d}
-                  </li>
-                ))}
-              </ul>
             </div>
-          ))}
+            <h4>Audit, listen, <span className="mint">ship one win.</span></h4>
+            <p className="flight-card-frame">Two weeks of listening, then a <strong>credibility deposit</strong> before I touch the engine.</p>
+            <ul className="flight-checklist">
+              <li>Sit with every brand GM</li>
+              <li>Audit every funnel, ad account, CRM</li>
+              <li>Pull call transcripts → pain-point map</li>
+              <li><span className="mint">Ship</span> one revamped landing page</li>
+            </ul>
+          </div>
+
+          <div className="flight-card">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="flight-card-header">
+              <div className="flight-card-num">02</div>
+              <div className="flight-card-meta">
+                <div className="flight-card-label">Orbit</div>
+                <div className="flight-card-days">Days 15—45</div>
+              </div>
+            </div>
+            <h4>Stand up the <span className="mint">engine.</span></h4>
+            <p className="flight-card-frame">Multi-tenant foundation goes live. The systems that <strong>compound</strong> from day 30 on.</p>
+            <ul className="flight-checklist">
+              <li>Unified CRM, brand-routed</li>
+              <li>Landing pages live, <strong>4+ brands</strong></li>
+              <li>Conquest scraper, <strong>2 markets</strong></li>
+              <li>Property Revenue Estimates, brand-aware</li>
+              <li>Programmatic SEO templates ready</li>
+            </ul>
+          </div>
+
+          <div className="flight-card is-final">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="flight-card-header">
+              <div className="flight-card-num">03</div>
+              <div className="flight-card-meta">
+                <div className="flight-card-label">Lunar approach</div>
+                <div className="flight-card-days">Days 46—90</div>
+              </div>
+            </div>
+            <h4>Saturate the <span className="mint">funnel.</span></h4>
+            <p className="flight-card-frame"><strong>All eight brands</strong> on the system. Engine at scale, documented for handoff.</p>
+            <ul className="flight-checklist">
+              <li>Conquest engine, <strong>every market</strong></li>
+              <li>Programmatic SEO past <strong>2,000 pages</strong></li>
+              <li>AI outbound at scale, brand-routed</li>
+              <li>Quarterly market reports shipped</li>
+              <li><span className="mint">Documented playbook</span> a hire can run</li>
+            </ul>
+          </div>
+
         </div>
+
       </div>
     </section>
   )

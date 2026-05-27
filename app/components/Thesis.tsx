@@ -1,67 +1,59 @@
 export default function Thesis() {
   return (
-    <section id="thesis" className="py-28 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="section-label mb-10 reveal">
-          <span className="text-mint">—</span>
-          01 / Thesis
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left: bold opinion */}
-          <div className="reveal">
-            <h2
-              className="text-4xl xl:text-5xl font-display font-bold leading-[1.1] tracking-tight"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              Stayd&apos;s edge isn&apos;t eight brands.
-              <br />
-              <span className="text-mint">
-                It&apos;s eight brands run by one engine.
-              </span>
-            </h2>
-            <p className="text-text-2 mt-6 text-lg leading-relaxed">
-              Every solo PM in the country is forced to be their own marketer,
-              designer, SEO writer, ads operator, CRM admin.{' '}
-              <span
-                className="text-mint font-medium"
-                style={{
-                  background: 'linear-gradient(transparent 70%, rgba(0,232,154,0.2) 70%)',
-                }}
-              >
-                They&apos;re losing.
-              </span>
-            </p>
-          </div>
+    <section className="s" id="thesis">
+      <div className="angle-ornament" style={{ top: 80, right: -120, width: 540, height: 540 }} aria-hidden="true">
+        <svg viewBox="0 0 540 540" preserveAspectRatio="xMidYMid meet">
+          <polygon className="line-faint" points="270,30 470,150 470,390 270,510 70,390 70,150" />
+          <polygon className="line" points="270,90 410,170 410,370 270,450 130,370 130,170" />
+          <polygon className="line" points="270,150 350,200 350,340 270,390 190,340 190,200" />
+          <circle className="dot" cx="270" cy="30" r="2.5" />
+          <circle className="dot" cx="470" cy="150" r="2.5" />
+          <circle className="dot" cx="470" cy="390" r="2.5" />
+          <circle className="dot" cx="270" cy="510" r="2.5" />
+          <circle className="dot" cx="70" cy="390" r="2.5" />
+          <circle className="dot" cx="70" cy="150" r="2.5" />
+          <circle className="dot pulse" cx="270" cy="270" r="4" />
+          <line className="line-faint" x1="270" y1="30" x2="270" y2="510" />
+          <line className="line-faint" x1="70" y1="270" x2="470" y2="270" />
+        </svg>
+      </div>
+      <div className="shell">
 
-          {/* Right: body */}
-          <div className="reveal reveal-d1 space-y-5 text-text-2 leading-relaxed">
+        <div className="reveal">
+          <div className="s-eyebrow"><span className="num">01</span> The bet</div>
+          <h2 className="s-head">
+            Stayd&apos;s edge isn&apos;t eight brands.<br />
+            <span className="mint">It&apos;s eight brands run by one engine.</span>
+          </h2>
+        </div>
+
+        <div className="thesis-grid" style={{ marginTop: 80 }}>
+          <div className="thesis-pull reveal">
+            Every solo PM in the country is forced to be their own marketer, designer, SEO writer, ads operator, CRM admin.{' '}
+            <span className="mint">They&apos;re losing.</span>
+          </div>
+          <div className="thesis-body reveal">
             <p>
-              The alternative is to build the thing most operators only dream about: a{' '}
-              <strong className="text-white font-medium">multi-tenant homeowner acquisition machine</strong> —
-              one where all eight brands share the same intelligence layer, the same
-              competitive data, the same campaign infrastructure, and the same AI agents.
+              The Stayd play is to build the engine once and theme it n ways. Eight brands today. Twenty-plus tomorrow.
+              Each one keeps its local identity. The funnel, the CRM, the conquest data, the AI personalization, the
+              analytics layer, the programmatic SEO — all centralized, all configurable,{' '}
+              <strong>all running as one piece of infrastructure</strong>.
             </p>
             <p>
-              At Renjoy, I didn&apos;t theorize about this structure. I built it — solo — for
-              one brand in three markets. Every playbook I shipped maps directly to
-              Stayd&apos;s surface area.{' '}
-              <span className="text-white font-medium">
-                That&apos;s the bet I&apos;m making here.
-              </span>
+              I&apos;ve been doing exactly this — at smaller scale, in microcosm — at <strong>Renjoy</strong>. Three
+              Colorado markets. One brand. One operator-marketer. Property-specific opportunity reports, branded
+              acquisition funnels, conquest scraping on the entire Airbnb market, an AI research agent that briefs
+              sales reps before every call, in-house e-signature, an owner portal that closes the gap between proposal
+              and signed contract.
             </p>
             <p>
-              Improve one specialist agent and every brand benefits instantly. That&apos;s
-              where the leverage compounds. That&apos;s the Stayd edge nobody else has —
-              <em className="text-mint not-italic"> if you build it.</em>
+              The Stayd version is the same playbook with <span className="mint">50x the surface area</span>, a real
+              budget, and AI infrastructure that lets one builder operate like a team of five.{' '}
+              <strong>That&apos;s the bet.</strong>
             </p>
-            <div
-              className="mt-6 pt-6 font-mono text-xs text-text-3 tracking-widest uppercase flex items-center gap-2"
-              style={{ borderTop: '1px solid var(--border)', fontFamily: 'var(--font-mono)' }}
-            >
-              <span className="text-mint">—</span> Also true
-            </div>
           </div>
         </div>
+
       </div>
     </section>
   )

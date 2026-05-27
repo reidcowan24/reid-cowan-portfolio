@@ -7,14 +7,14 @@ export function useScrollReveal() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add('visible')
+            e.target.classList.add('in')
             io.unobserve(e.target)
           }
         })
       },
       { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     )
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => io.observe(el))
     return () => io.disconnect()
   }, [])
 }

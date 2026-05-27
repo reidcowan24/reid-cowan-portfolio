@@ -1,169 +1,129 @@
 'use client'
 import { useState } from 'react'
 
-const builds = [
-  {
-    title: 'Trigger-based AI outbound',
-    meta: 'Intent signal → personalized outreach',
-    desc: 'Scrapes ownership-change signals and routes personalized outbound copy through Claude. No manual prospecting.',
-    tags: ['Claude API', 'n8n', 'Supabase', 'GHL'],
-    stayd: 'One system, all 8 brand voices. Fire across every market simultaneously.',
-  },
-  {
-    title: 'Programmatic SEO foundations',
-    meta: 'Template → 2,000+ pages at scale',
-    desc: 'City/neighborhood landing page engine. One template, unlimited market expansion. GSC-verified indexing.',
-    tags: ['Next.js', 'Supabase', 'Vercel', 'GSC'],
-    stayd: '8 brands × 8 markets = 64 content clusters, each SEO-native from day one.',
-  },
-  {
-    title: 'AI Sales Handoff Briefs',
-    meta: 'Lead context → closer-ready brief',
-    desc: 'Synthesizes lead history, call transcripts, and property data into a 60-second handoff document before every close call.',
-    tags: ['Claude API', 'Fireflies', 'GHL', 'n8n'],
-    stayd: 'Every Stayd brand GM walks into calls with full context. No dropped leads.',
-  },
-  {
-    title: 'RMaaS productization',
-    meta: 'Revenue management as a product',
-    desc: 'Building the revenue management offer into a productized service with automated pricing, reporting, and owner comms.',
-    tags: ['PriceLabs', 'Supabase', 'n8n', 'Claude'],
-    stayd: 'Stayd\'s 2,500-unit portfolio becomes a pricing intelligence flywheel.',
-  },
-  {
-    title: 'Owner-side retention engine',
-    meta: 'Proactive churn prevention',
-    desc: 'Monitors owner satisfaction signals, triggers personalized outreach at risk moments, and routes escalations automatically.',
-    tags: ['Claude API', 'Supabase', 'n8n', 'GHL'],
-    stayd: 'Brand-specific owner personas with shared retention infrastructure.',
-  },
-  {
-    title: 'Property Revenue Estimates',
-    meta: 'Gate-as-conversion-lever framing',
-    desc: 'Generates hyper-local revenue projections as the primary conversion mechanic — owners get real numbers, we get qualified leads.',
-    tags: ['AirDNA', 'PriceLabs', 'Claude', 'Next.js'],
-    stayd: 'Deploy to all 8 brands at once. Shared data layer, brand-specific UX.',
-  },
-]
-
 export default function Running() {
   const [expanded, setExpanded] = useState(false)
-  const visible = expanded ? builds : builds.slice(0, 3)
+
+  function toggle() {
+    setExpanded((prev) => {
+      if (prev) {
+        const section = document.getElementById('running')
+        if (section) {
+          const top = section.getBoundingClientRect().top + window.scrollY - 80
+          window.scrollTo({ top, behavior: 'smooth' })
+        }
+      }
+      return !prev
+    })
+  }
 
   return (
-    <section
-      id="running"
-      className="py-28 px-6"
-      style={{ borderTop: '1px solid var(--border)' }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="section-label mb-4 reveal">
-          <span className="text-mint">—</span>
-          02 / Running
-        </div>
-        <h2
-          className="text-4xl xl:text-5xl font-display font-bold tracking-tight leading-[1.1] mb-4 reveal"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          What I&apos;m{' '}
-          <span className="text-mint">shipping</span> right now.
-        </h2>
-        <p className="text-text-2 text-lg mb-12 reveal reveal-d1">
-          Six active builds in flight. Each one ports directly to Stayd&apos;s surface area.
-        </p>
+    <section className="s" id="running">
+      <div className="angle-ornament" style={{ top: 120, left: -100, width: 380, height: 480 }} aria-hidden="true">
+        <svg viewBox="0 0 380 480" preserveAspectRatio="xMidYMid meet">
+          <line className="line" x1="40" y1="60" x2="280" y2="100" />
+          <line className="line" x1="280" y1="100" x2="180" y2="240" />
+          <line className="line" x1="180" y1="240" x2="40" y2="60" />
+          <line className="line-faint" x1="40" y1="60" x2="80" y2="240" />
+          <line className="line-faint" x1="80" y1="240" x2="180" y2="240" />
+          <line className="line-faint" x1="80" y1="240" x2="280" y2="100" />
+          <line className="line" x1="80" y1="240" x2="40" y2="400" />
+          <line className="line" x1="40" y1="400" x2="220" y2="380" />
+          <line className="line" x1="220" y1="380" x2="80" y2="240" />
+          <line className="line-faint" x1="220" y1="380" x2="280" y2="100" />
+          <circle className="dot" cx="40" cy="60" r="2.5" />
+          <circle className="dot" cx="280" cy="100" r="2.5" />
+          <circle className="dot" cx="180" cy="240" r="2.5" />
+          <circle className="dot" cx="80" cy="240" r="2.5" />
+          <circle className="dot" cx="40" cy="400" r="2.5" />
+          <circle className="dot pulse" cx="220" cy="380" r="3" />
+        </svg>
+      </div>
+      <div className="shell">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-          {visible.map((b, i) => (
-            <div
-              key={i}
-              className="hud-card rounded-lg p-6 flex flex-col reveal"
-              style={{
-                background: '#14171F',
-                border: '1px solid var(--border)',
-                transitionDelay: `${(i % 3) * 0.08}s`,
-              }}
-            >
-              <span className="hud-tl" />
-              <span className="hud-tr" />
-              <span className="hud-bl" />
-              <span className="hud-br-c" />
-
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <span
-                  className="font-mono text-[10px] text-text-4 tracking-widest"
-                  style={{ fontFamily: 'var(--font-mono)' }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span
-                  className="text-[10px] font-mono px-2 py-0.5 rounded text-mint"
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    background: 'rgba(0,232,154,0.08)',
-                    border: '1px solid rgba(0,232,154,0.2)',
-                  }}
-                >
-                  Active
-                </span>
-              </div>
-
-              <h3
-                className="text-white font-semibold font-display mb-1"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
-                {b.title}
-              </h3>
-              <div
-                className="text-text-3 text-xs font-mono mb-3"
-                style={{ fontFamily: 'var(--font-mono)' }}
-              >
-                {b.meta}
-              </div>
-              <p className="text-text-2 text-sm leading-relaxed flex-1 mb-4">{b.desc}</p>
-
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {b.tags.map((t, j) => (
-                  <span
-                    key={j}
-                    className="text-[10px] font-mono text-text-3 px-1.5 py-0.5 rounded"
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      background: 'rgba(255,255,255,0.04)',
-                      border: '1px solid var(--border)',
-                    }}
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <div
-                className="pt-3 text-xs text-text-3 leading-snug"
-                style={{ borderTop: '1px solid var(--border)' }}
-              >
-                <span className="text-text-4 font-mono text-[10px] uppercase tracking-widest block mb-1" style={{ fontFamily: 'var(--font-mono)' }}>
-                  Stayd translation
-                </span>
-                {b.stayd}
-              </div>
-            </div>
-          ))}
+        <div className="reveal">
+          <div className="s-eyebrow"><span className="num">02</span> In motion</div>
+          <h2 className="s-head">
+            What I&apos;m <span className="mint">shipping</span> right now.
+          </h2>
+          <p className="s-sub">
+            Active builds at Renjoy as of this week. These become the first plays I&apos;d port to Stayd on day one —
+            and the ones I&apos;d hand off to brand teams as fully productized systems within ninety days.
+          </p>
         </div>
 
-        <div className="flex justify-center">
+        <div className={`grid cols-3 reveal-stagger${expanded ? '' : ' collapsed'}`} id="running-grid">
+
+          <div className="card">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="card-head"><div className="card-num">— Active / 01</div><span className="pill live">Shipping</span></div>
+            <h3 className="card-title">Trigger-based <span className="mint">AI outbound</span></h3>
+            <p className="card-desc">The conquest engine flags listings in distress — rating drop, calendar dark, response rate falling, lost Guest Favorite badge. An agent writes a personalized intro referencing the prospect&apos;s actual property. SDRs reach owners at peak motivation, not at random.</p>
+            <div className="card-stack"><span className="tag">Claude API</span><span className="tag">Playwright</span><span className="tag">Supabase triggers</span><span className="tag">Instantly</span></div>
+            <div className="card-foot"><span className="label">Stayd translation</span>Every distressed listing in eight markets, ranked daily, routed to the right brand&apos;s SDR with the message already written.</div>
+          </div>
+
+          <div className="card">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="card-head"><div className="card-num">— Active / 02</div><span className="pill live">Shipping</span></div>
+            <h3 className="card-title">Programmatic <span className="mint">SEO foundations</span></h3>
+            <p className="card-desc">Neighborhood pages, regulatory-by-jurisdiction pages, revenue calculator pages. AI-drafted, human-edited, schema-marked. The compounding asset that takes paid spend off the critical path.</p>
+            <div className="card-stack"><span className="tag">Next.js</span><span className="tag">Claude API</span><span className="tag">Ahrefs</span><span className="tag">Supabase</span></div>
+            <div className="card-foot"><span className="label">Stayd translation</span>Templates × 8 markets × hundreds of neighborhoods = thousands of indexed pages, brand-specific, in 90 days.</div>
+          </div>
+
+          <div className="card">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="card-head"><div className="card-num">— Active / 03</div><span className="pill live">Shipping</span></div>
+            <h3 className="card-title">AI Sales <span className="mint">Handoff Briefs</span></h3>
+            <p className="card-desc">The moment a lead moves to &quot;qualified,&quot; an agent writes a 600-word brief on the prospect, property, and market. Brian walks into every call already prepared.</p>
+            <div className="card-stack"><span className="tag">Claude Sonnet</span><span className="tag">Supabase MCP</span><span className="tag">n8n</span></div>
+            <div className="card-foot"><span className="label">Stayd translation</span>One brief generator, brand-aware, serving every AE across every market. Standardized handoff.</div>
+          </div>
+
+          <div className="card over-limit">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="card-head"><div className="card-num">— Active / 04</div><span className="pill live">Shipping</span></div>
+            <h3 className="card-title">RMaaS <span className="mint">productization</span></h3>
+            <p className="card-desc">Revenue Management as a Service as a standalone offer with its own funnel, landing pages, and sales motion — for owners who want to stay self-managed but outsource pricing strategy.</p>
+            <div className="card-stack"><span className="tag">PriceLabs</span><span className="tag">Slack alerts</span><span className="tag">RPI / Comp Gap</span></div>
+            <div className="card-foot"><span className="label">Stayd translation</span>A second product line for owners not ready for full management. Wider top-of-funnel, more conversions later.</div>
+          </div>
+
+          <div className="card over-limit">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="card-head"><div className="card-num">— Active / 05</div><span className="pill live">Shipping</span></div>
+            <h3 className="card-title">Owner-side <span className="mint">retention engine</span></h3>
+            <p className="card-desc">The other side of acquisition: building churn-risk detection, owner-NPS pulses, and proactive performance reporting into the owner portal so we don&apos;t lose what we sign.</p>
+            <div className="card-stack"><span className="tag">Next.js</span><span className="tag">Supabase</span><span className="tag">Resend</span></div>
+            <div className="card-foot"><span className="label">Stayd translation</span>Acquisition without retention is a leaky bucket. Same engine watches 2,500+ Stayd owners across brands.</div>
+          </div>
+
+          <div className="card over-limit">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="card-head"><div className="card-num">— Active / 06</div><span className="pill live">Shipping</span></div>
+            <h3 className="card-title">Property <span className="mint">Revenue Estimates</span></h3>
+            <p className="card-desc">Owners enter their property details and contact info — then get an instant onsite revenue estimate built from real Renjoy comps. The gate is the conversion lever: fair value exchange, captured leads come in qualified and primed. Embeds anywhere, lives on every funnel.</p>
+            <div className="card-stack"><span className="tag">Next.js</span><span className="tag">market_listings</span><span className="tag">Supabase RLS</span></div>
+            <div className="card-foot"><span className="label">Stayd translation</span>The universal top-of-funnel hook across all eight brands. Live on every brand site, embeddable in any campaign — captured leads routed to the right brand&apos;s SDR.</div>
+          </div>
+
+        </div>
+
+        <div className="show-more-wrap">
           <button
-            onClick={() => setExpanded(!expanded)}
-            className="font-mono text-xs text-text-3 hover:text-mint transition-colors flex items-center gap-2 py-2 px-4 rounded"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              border: '1px solid var(--border)',
-            }}
+            className={`show-more${expanded ? ' expanded' : ''}`}
+            type="button"
+            aria-expanded={expanded}
+            aria-controls="running-grid"
+            onClick={toggle}
           >
-            {expanded
-              ? `Hide builds ▴ | ${builds.length} / ${builds.length}`
-              : `Show all ${builds.length} active builds ▾ | 3 / ${builds.length}`}
+            <span className="label">{expanded ? 'Show less' : 'Show all 6 active builds'}</span>
+            <span className="arrow">▾</span>
+            <span className="count-pill"><span className="visible-count">{expanded ? '6' : '3'}</span> / 6</span>
           </button>
         </div>
+
       </div>
     </section>
   )

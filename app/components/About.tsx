@@ -1,154 +1,106 @@
-const timeline = [
-  {
-    years: '2012–2021',
-    badge: 'Team of 5',
-    company: 'Dental manufacturer · national scale',
-    bullets: ['~$500K budget', 'National distribution', 'Field rep network'],
-    body: 'Promotions, advertising, rep engagement at national scale. Learned to deploy a centralized marketing engine through field reps — structurally identical to Stayd\'s brand-GM structure.',
-    result: null,
-  },
-  {
-    years: '2021–2023',
-    badge: 'Founder',
-    company: 'My own marketing agency',
-    bullets: ['SEO / brand / web', 'Local SMB clients', 'Full P&L ownership'],
-    body: 'Quit and built my own thing. Full-service marketing for local SMBs — sold the work and delivered it. Running a P&L makes you ruthless about ROI.',
-    result: null,
-  },
-  {
-    years: '2023–Now',
-    badge: 'AI-Leveraged',
-    company: 'Renjoy · the AI chapter',
-    bullets: ['3 markets', '1 brand', '10 systems shipped'],
-    body: 'Same instinct, brand new leverage. What used to need a team of 5, I now ship solo with Claude Code and a fleet of sub-agents.',
-    result: '$300K+ in contract value the first year.',
-    isMint: true,
-  },
-]
-
-const alsoTrue = [
-  { icon: '🎣', color: '#00E89A', label: 'Fly fishing when the hatch is on' },
-  { icon: '🔵', color: '#4A90E2', label: 'Blue is the favorite color' },
-  { icon: '🧦', color: '#00E89A', label: 'Wool socks, even in July' },
-  { icon: '✦', color: '#00E89A', label: 'Maxing Claude tokens, like it\'s my job' },
-]
-
 export default function About() {
   return (
-    <section id="about" className="py-28 px-6" style={{ borderTop: '1px solid var(--border)' }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="section-label mb-4 reveal">
-          <span className="text-mint">—</span>
-          01.5 / About
+    <section className="s about-section" id="about">
+      <div className="shell">
+
+        <div className="reveal">
+          <div className="s-eyebrow"><span className="num">01.5</span> About</div>
+          <h2 className="s-head">
+            14+ years of marketing. <span className="mint">6 months of AI changed everything.</span>
+          </h2>
         </div>
-        <h2
-          className="text-4xl xl:text-5xl font-display font-bold tracking-tight leading-[1.1] mb-12 reveal"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          14+ years of marketing.{' '}
-          <span className="text-mint">6 months of AI changed everything.</span>
-        </h2>
 
-        {/* Timeline cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-          {timeline.map((item, i) => (
-            <div
-              key={i}
-              className={`hud-card rounded-lg p-6 flex flex-col reveal reveal-d${i + 1}`}
-              style={{
-                background: '#14171F',
-                border: item.isMint
-                  ? '1px solid rgba(0,232,154,0.2)'
-                  : '1px solid var(--border)',
-              }}
-            >
-              <span className="hud-tl" />
-              <span className="hud-tr" />
-              <span className="hud-bl" />
-              <span className="hud-br-c" />
+        <div className="about-row reveal-stagger">
 
-              <div className="flex items-center justify-between mb-4">
-                <span
-                  className="font-mono text-[10px] tracking-widest text-text-3 uppercase"
-                  style={{ fontFamily: 'var(--font-mono)' }}
-                >
-                  {item.years}
-                </span>
-                <span
-                  className="text-[10px] font-mono tracking-widest uppercase px-2 py-0.5 rounded"
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    color: item.isMint ? '#00E89A' : '#B4B7BE',
-                    background: item.isMint ? 'rgba(0,232,154,0.08)' : 'rgba(255,255,255,0.05)',
-                    border: `1px solid ${item.isMint ? 'rgba(0,232,154,0.2)' : 'var(--border)'}`,
-                  }}
-                >
-                  {item.badge}
-                </span>
-              </div>
-
-              <div className="text-white font-medium text-sm mb-3">{item.company}</div>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {item.bullets.map((b, j) => (
-                  <span
-                    key={j}
-                    className="text-[10px] font-mono text-text-3 px-2 py-0.5 rounded"
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      background: 'rgba(255,255,255,0.04)',
-                      border: '1px solid var(--border)',
-                    }}
-                  >
-                    {b}
-                  </span>
-                ))}
-              </div>
-              <p className="text-text-2 text-sm leading-relaxed flex-1">{item.body}</p>
-
-              {item.result && (
-                <div
-                  className="mt-5 pt-4 rounded"
-                  style={{ borderTop: '1px solid rgba(0,232,154,0.2)' }}
-                >
-                  <div
-                    className="font-mono text-[10px] tracking-widest text-text-3 uppercase mb-1"
-                    style={{ fontFamily: 'var(--font-mono)' }}
-                  >
-                    <span className="text-mint">—</span> Result
-                  </div>
-                  <div className="text-mint font-display font-semibold text-sm" style={{ fontFamily: 'var(--font-display)' }}>
-                    {item.result}
-                  </div>
-                </div>
-              )}
+          <div className="about-card">
+            <span className="node"></span>
+            <div className="meta">
+              <span className="years">2012 — 2021</span>
+              <span>·</span>
+              <span>Team of 5</span>
             </div>
-          ))}
+            <h3>Dental manufacturer · <span className="mint">national scale</span></h3>
+            <div className="role-line">$500K budget · promotions · advertising · rep engagement</div>
+            <p>
+              <strong>~$500K budget, team of 5, national distribution network.</strong> Learned how to deploy a
+              centralized marketing engine through field reps who own the relationships — structurally identical to
+              Stayd&apos;s brand-GM structure.
+            </p>
+          </div>
+
+          <div className="about-card">
+            <span className="node"></span>
+            <div className="meta">
+              <span className="years">2021 — 2023</span>
+              <span>·</span>
+              <span>Founder</span>
+            </div>
+            <h3>My own <span className="mint">marketing agency</span></h3>
+            <div className="role-line">SEO · brand · web · local SMB</div>
+            <p>
+              Quit and built my own thing. Full-service marketing for local SMBs — sold the work and delivered it.
+              Running a P&amp;L makes you ruthless about ROI in a way no salaried role ever does.
+            </p>
+          </div>
+
+          <div className="about-card current">
+            <span className="node"></span>
+            <div className="meta">
+              <span className="years">2023 — Now</span>
+              <span>·</span>
+              <span>AI-leveraged</span>
+            </div>
+            <h3>Renjoy · <span className="mint">the AI chapter</span></h3>
+            <div className="role-line">3 markets · 1 brand · 10 systems shipped</div>
+            <p>
+              Same instinct, brand new leverage. What used to need a team of 5 and a real budget,{' '}
+              <span className="mint">I now ship solo with Claude Code and a fleet of sub-agents</span>. Stayd is where
+              that leverage meets a holdco surface area.
+            </p>
+            <div className="about-result">
+              <span className="about-result-label">— Result</span>
+              <div className="about-result-body">
+                Drove <span className="num">$300K+</span> in contract value the first year.
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        {/* Also True strip */}
-        <div
-          className="relative rounded-lg p-6 reveal"
-          style={{ background: '#14171F', border: '1px solid var(--border)' }}
-        >
-          <span className="hud-tl" />
-          <span className="hud-tr" />
-          <span className="hud-bl" />
-          <span className="hud-br-c" />
-          <div
-            className="font-mono text-[10px] tracking-widest text-text-3 uppercase mb-5"
-            style={{ fontFamily: 'var(--font-mono)' }}
-          >
-            <span className="text-mint">—</span> Also true
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {alsoTrue.map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <span className="text-lg leading-none mt-0.5">{item.icon}</span>
-                <span className="text-text-2 text-sm leading-snug">{item.label}</span>
-              </div>
-            ))}
+        <div className="about-fun reveal">
+          <div className="about-fun-label">— ALSO <span className="mint-v">TRUE</span></div>
+          <div className="fun-items">
+            <span className="fun-item">
+              <svg className="fun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M3 12c2-4 6-6 10-6 3 0 5 1 6 2"/>
+                <path d="M19 8l3-2-3-2"/>
+                <path d="M3 12c2 4 6 6 10 6 3 0 5-1 6-2"/>
+                <circle cx="16" cy="11" r="0.6" fill="currentColor"/>
+              </svg>
+              <em>Fly fishing</em> when the hatch is on
+            </span>
+            <span className="fun-item">
+              <svg className="fun-icon is-blue" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="12" cy="12" r="8"/>
+              </svg>
+              <em>Blue</em> is the favorite color
+            </span>
+            <span className="fun-item">
+              <svg className="fun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M9 3h6v8l3 4v5a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1v-2l-3-4V9z"/>
+                <path d="M9 11h6"/>
+              </svg>
+              <em>Wool socks</em>, even in July
+            </span>
+            <span className="fun-item">
+              <svg className="fun-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M 12,2 C 13.1,8.3 14.7,10.9 22,12 C 14.7,13.1 13.1,15.7 12,22 C 10.9,15.7 9.3,13.1 2,12 C 9.3,10.9 10.9,8.3 12,2 Z"/>
+              </svg>
+              <em>Maxing Claude tokens</em>, like it&apos;s my job
+            </span>
           </div>
         </div>
+
       </div>
     </section>
   )

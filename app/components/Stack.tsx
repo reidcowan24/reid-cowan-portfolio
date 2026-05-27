@@ -1,141 +1,128 @@
-const categories = [
-  {
-    name: 'Build',
-    tools: [
-      { label: 'Claude Code', key: true },
-      { label: 'Cursor', key: false },
-      { label: 'GitHub', key: false },
-      { label: 'Linear', key: false },
-      { label: 'Vercel', key: false },
-    ],
-  },
-  {
-    name: 'Sites & data',
-    tools: [
-      { label: 'Next.js', key: false },
-      { label: 'Supabase', key: true },
-      { label: 'Framer', key: false },
-      { label: 'Webflow', key: false },
-      { label: 'Tailwind', key: false },
-    ],
-  },
-  {
-    name: 'CRM & ops',
-    tools: [
-      { label: 'Renjoy OS', key: true },
-      { label: 'GoHighLevel', key: false },
-      { label: 'Supabase', key: false },
-      { label: 'n8n', key: false },
-    ],
-  },
-  {
-    name: 'Outbound',
-    tools: [
-      { label: 'Instantly', key: false },
-      { label: 'Smartlead', key: false },
-      { label: 'Apollo', key: false },
-      { label: 'Clay', key: false },
-      { label: 'Pen Letters', key: false },
-    ],
-  },
-  {
-    name: 'Paid',
-    tools: [
-      { label: 'Meta Ads', key: false },
-      { label: 'Google Ads', key: false },
-      { label: 'Reddit Ads', key: false },
-      { label: 'LinkedIn', key: false },
-    ],
-  },
-  {
-    name: 'AI infra',
-    tools: [
-      { label: 'Anthropic API', key: true },
-      { label: 'Perplexity', key: false },
-      { label: 'Granola', key: false },
-      { label: 'Replicate', key: false },
-    ],
-  },
-  {
-    name: 'Scraping & data',
-    tools: [
-      { label: 'Playwright', key: true },
-      { label: 'Apify', key: false },
-      { label: 'PriceLabs Exports', key: false },
-      { label: 'AirDNA', key: false },
-    ],
-  },
-  {
-    name: 'Analytics & SEO',
-    tools: [
-      { label: 'PostHog', key: false },
-      { label: 'Ahrefs', key: false },
-      { label: 'Semrush', key: false },
-      { label: 'GSC', key: false },
-    ],
-  },
-]
-
 export default function Stack() {
   return (
-    <section
-      id="stack"
-      className="py-28 px-6"
-      style={{ borderTop: '1px solid var(--border)' }}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="section-label mb-4 reveal">
-          <span className="text-mint">—</span>
-          06 / Stack
-        </div>
-        <h2
-          className="text-4xl xl:text-5xl font-display font-bold tracking-tight leading-[1.1] mb-4 reveal"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          Tools I work in{' '}
-          <span className="text-mint">daily.</span>
-        </h2>
-        <p className="text-text-2 text-lg mb-12 reveal reveal-d1">
-          The full stack. No fluff. Everything listed is something I&apos;ve actually shipped with — not something I&apos;ve looked at a course about.
-        </p>
+    <section className="s" id="stack">
+      <div className="angle-ornament" style={{ top: 100, right: -100, width: 420, height: 420 }} aria-hidden="true">
+        <svg viewBox="0 0 420 420" preserveAspectRatio="xMidYMid meet">
+          <line className="line-faint" x1="60" y1="60" x2="360" y2="60" />
+          <line className="line-faint" x1="60" y1="180" x2="360" y2="180" />
+          <line className="line-faint" x1="60" y1="300" x2="360" y2="300" />
+          <line className="line-faint" x1="60" y1="60" x2="60" y2="360" />
+          <line className="line-faint" x1="180" y1="60" x2="180" y2="360" />
+          <line className="line-faint" x1="300" y1="60" x2="300" y2="360" />
+          <line className="line" x1="60" y1="60" x2="180" y2="180" />
+          <line className="line" x1="180" y1="180" x2="300" y2="60" />
+          <line className="line" x1="180" y1="180" x2="300" y2="300" />
+          <line className="line" x1="60" y1="300" x2="180" y2="180" />
+          <circle className="dot" cx="60" cy="60" r="2.5" />
+          <circle className="dot" cx="180" cy="60" r="2.5" />
+          <circle className="dot" cx="300" cy="60" r="2.5" />
+          <circle className="dot pulse" cx="180" cy="180" r="3" />
+          <circle className="dot" cx="300" cy="180" r="2.5" />
+          <circle className="dot" cx="60" cy="300" r="2.5" />
+          <circle className="dot" cx="180" cy="300" r="2.5" />
+          <circle className="dot" cx="300" cy="300" r="2.5" />
+        </svg>
+      </div>
+      <div className="shell">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 reveal reveal-d2">
-          {categories.map((cat, i) => (
-            <div
-              key={i}
-              className="p-6"
-              style={{
-                borderRight: i % 4 < 3 ? '1px solid var(--border)' : 'none',
-                borderBottom: i < categories.length - 4 ? '1px solid var(--border)' : 'none',
-              }}
-            >
-              <div
-                className="font-mono text-[10px] tracking-widest uppercase text-text-3 mb-3"
-                style={{ fontFamily: 'var(--font-mono)' }}
-              >
-                {cat.name}
-              </div>
-              <div className="flex flex-wrap gap-x-2 gap-y-1">
-                {cat.tools.map((t, j) => (
-                  <span
-                    key={j}
-                    className="text-sm"
-                    style={{
-                      color: t.key ? '#00E89A' : '#B4B7BE',
-                      fontWeight: t.key ? 600 : 400,
-                      fontFamily: 'var(--font-sans)',
-                    }}
-                  >
-                    {t.label}
-                    {j < cat.tools.length - 1 && (
-                      <span className="text-text-4 ml-2">·</span>
-                    )}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="reveal">
+          <div className="s-eyebrow"><span className="num">06</span> The stack</div>
+          <h2 className="s-head">
+            Tools I work in <span className="mint">daily.</span>
+          </h2>
+          <p className="s-sub">
+            The build environment that lets one operator do the work of a team. Eight categories. Every name below either
+            has my fingerprints on it from the last twelve months or sits on the roadmap for the next ninety days.
+          </p>
         </div>
+
+        <div className="stack-grid reveal-stagger">
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— Build</div>
+            <div className="stack-tools">
+              <span className="key">Claude Code</span>
+              <span>Cursor</span>
+              <span>GitHub</span>
+              <span>Linear</span>
+              <span>Vercel</span>
+            </div>
+          </div>
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— Sites &amp; data</div>
+            <div className="stack-tools">
+              <span>Next.js</span>
+              <span className="key">Supabase</span>
+              <span>Framer</span>
+              <span>Webflow</span>
+              <span>Tailwind</span>
+            </div>
+          </div>
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— CRM &amp; ops</div>
+            <div className="stack-tools">
+              <span className="key">Renjoy OS</span>
+              <span>GoHighLevel</span>
+              <span>Supabase</span>
+              <span>n8n</span>
+            </div>
+          </div>
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— Outbound</div>
+            <div className="stack-tools">
+              <span>Instantly</span>
+              <span>Smartlead</span>
+              <span>Apollo</span>
+              <span>Clay</span>
+              <span>Pen Letters</span>
+            </div>
+          </div>
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— Paid</div>
+            <div className="stack-tools">
+              <span>Meta Ads</span>
+              <span>Google Ads</span>
+              <span>Reddit Ads</span>
+              <span>LinkedIn</span>
+            </div>
+          </div>
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— AI infra</div>
+            <div className="stack-tools">
+              <span className="key">Anthropic API</span>
+              <span>Perplexity</span>
+              <span>Granola</span>
+              <span>Replicate</span>
+            </div>
+          </div>
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— Scraping &amp; data</div>
+            <div className="stack-tools">
+              <span className="key">Playwright</span>
+              <span>Apify</span>
+              <span>PriceLabs Exports</span>
+              <span>AirDNA</span>
+            </div>
+          </div>
+
+          <div className="stack-cat">
+            <div className="stack-cat-label">— Analytics &amp; SEO</div>
+            <div className="stack-tools">
+              <span>PostHog</span>
+              <span>Ahrefs</span>
+              <span>Semrush</span>
+              <span>GSC</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
   )
