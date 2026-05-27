@@ -52,7 +52,7 @@ export default function Receipts() {
         <div className="reveal">
           <div className="s-eyebrow"><span className="num">03</span> The receipts</div>
           <h2 className="s-head">
-            Ten systems <span className="mint">already</span> built.
+            Nine systems <span className="mint">already</span> built.
           </h2>
           <p className="s-sub">
             The Renjoy stack, end to end. Funnels, data, AI, CRM, brand. Every system below is in production today —
@@ -153,16 +153,6 @@ export default function Receipts() {
             <div className="card-foot"><span className="label">Stayd translation</span>Hilton Head retirees &amp; Hill Country second-home owners respond to physical mail. Brand-routed at scale.</div>
           </div>
 
-          <div className="card over-limit">
-            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
-            <div className="card-head"><div className="card-num">— 10</div><span className="pill shipped">Shipped</span></div>
-            <h3 className="card-title">Renjoy <span className="mint">Intelligence</span></h3>
-            <div className="card-domain">research agent · /research</div>
-            <p className="card-desc">Templated research per lead: bedroom-matched comps from internal data, Perplexity on the owner, Airbnb scrape for review trend, permit status check, revenue gap math, synthesized brief. Cited. Consistent. Comparable.</p>
-            <div className="card-stack"><span className="tag">Claude Sonnet</span><span className="tag">Perplexity sonar-pro</span><span className="tag">Playwright</span></div>
-            <div className="card-foot"><span className="label">Result</span>Pre-call prep dropped from 30 min/lead to ~3. Connect rates up.</div>
-          </div>
-
         </div>
 
         <div className="show-more-wrap">
@@ -173,9 +163,9 @@ export default function Receipts() {
             aria-controls="receipts-grid"
             onClick={toggle}
           >
-            <span className="label">{expanded ? 'Show less' : 'Show all 10 shipped receipts'}</span>
+            <span className="label">{expanded ? 'Show less' : 'Show all 9 shipped receipts'}</span>
             <span className="arrow">▾</span>
-            <span className="count-pill"><span className="visible-count">{expanded ? '10' : '3'}</span> / 10</span>
+            <span className="count-pill"><span className="visible-count">{expanded ? '9' : '3'}</span> / 9</span>
           </button>
         </div>
 
