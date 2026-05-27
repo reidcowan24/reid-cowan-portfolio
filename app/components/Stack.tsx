@@ -54,8 +54,8 @@ export default function Stack() {
             <div className="stack-tools">
               <span>Next.js</span>
               <span className="key">Supabase</span>
-              <span>Framer</span>
-              <span>Webflow</span>
+              <span>Vercel</span>
+              <span>Figma</span>
               <span>Tailwind</span>
             </div>
           </div>

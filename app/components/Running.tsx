@@ -1,20 +1,31 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 export default function Running() {
   const [expanded, setExpanded] = useState(false)
+  const gridRef = useRef<HTMLDivElement>(null)
+
+  // Add collapsed class via DOM so React never touches it (preserves .in from IntersectionObserver)
+  useEffect(() => {
+    gridRef.current?.classList.add('collapsed')
+  }, [])
 
   function toggle() {
-    setExpanded((prev) => {
-      if (prev) {
-        const section = document.getElementById('running')
-        if (section) {
-          const top = section.getBoundingClientRect().top + window.scrollY - 80
-          window.scrollTo({ top, behavior: 'smooth' })
-        }
+    const grid = gridRef.current
+    if (!grid) return
+    const isCollapsed = grid.classList.contains('collapsed')
+    if (isCollapsed) {
+      grid.classList.remove('collapsed')
+      setExpanded(true)
+    } else {
+      grid.classList.add('collapsed')
+      setExpanded(false)
+      const section = document.getElementById('running')
+      if (section) {
+        const top = section.getBoundingClientRect().top + window.scrollY - 80
+        window.scrollTo({ top, behavior: 'smooth' })
       }
-      return !prev
-    })
+    }
   }
 
   return (
@@ -52,7 +63,7 @@ export default function Running() {
           </p>
         </div>
 
-        <div className={`grid cols-3 reveal-stagger${expanded ? '' : ' collapsed'}`} id="running-grid">
+        <div className="grid cols-3 reveal-stagger" ref={gridRef} id="running-grid">
 
           <div className="card">
             <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
