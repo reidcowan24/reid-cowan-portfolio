@@ -52,7 +52,7 @@ export default function Receipts() {
         <div className="reveal">
           <div className="s-eyebrow"><span className="num">03</span> The receipts</div>
           <h2 className="s-head">
-            Nine systems <span className="mint">already</span> built.
+            Ten systems <span className="mint">already</span> built.
           </h2>
           <p className="s-sub">
             The Renjoy stack, end to end. Funnels, data, AI, CRM, brand. Every system below is in production today —
@@ -146,6 +146,16 @@ export default function Receipts() {
           <div className="card over-limit">
             <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
             <div className="card-head"><div className="card-num">— 09</div><span className="pill shipped">Shipped</span></div>
+            <h3 className="card-title">Renjoy <span className="mint">Labs</span></h3>
+            <div className="card-domain">labs.renjoy.com</div>
+            <p className="card-desc">Public-facing thought leadership platform for VRM operators navigating AI adoption. Essay series, AI systems tracker, and real production case studies from Renjoy&apos;s own stack — written for operators who are building, not watching.</p>
+            <div className="card-stack"><span className="tag">Next.js</span><span className="tag">Supabase</span><span className="tag">Vercel</span></div>
+            <div className="card-foot"><span className="label">Stayd translation</span>The brand authority layer. One content engine, eight brand voices — operators in every market land on content that speaks their market before they ever fill out a form.</div>
+          </div>
+
+          <div className="card over-limit">
+            <span className="corner-tl"></span><span className="corner-tr"></span><span className="corner-bl"></span><span className="corner-br"></span>
+            <div className="card-head"><div className="card-num">— 10</div><span className="pill shipped">Shipped</span></div>
             <h3 className="card-title">Direct mail <span className="mint">at scale</span></h3>
             <div className="card-domain">postcards + handwritten letters</div>
             <p className="card-desc">Two formats, both QR-tracked. 6×11 postcards in the Renjoy brand guide with real local photography. Handwritten letters via robotic services — Brian&apos;s voice, under 800 chars, P.S. lines, dedicated short-link QR for attribution.</p>
@@ -163,9 +173,9 @@ export default function Receipts() {
             aria-controls="receipts-grid"
             onClick={toggle}
           >
-            <span className="label">{expanded ? 'Show less' : 'Show all 9 shipped receipts'}</span>
+            <span className="label">{expanded ? 'Show less' : 'Show all 10 shipped receipts'}</span>
             <span className="arrow">▾</span>
-            <span className="count-pill"><span className="visible-count">{expanded ? '9' : '3'}</span> / 9</span>
+            <span className="count-pill"><span className="visible-count">{expanded ? '10' : '3'}</span> / 10</span>
           </button>
         </div>
 
